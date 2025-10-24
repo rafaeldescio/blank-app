@@ -1,5 +1,8 @@
 .streamlit/secrets.toml
 
+# Database files
+base-de-dados/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
