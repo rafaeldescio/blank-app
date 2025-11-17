@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import DBSCAN
 from sklearn.decomposition import PCA
 import warnings
-from utils import DATABASE_DIR
+from utils import DATABASE_DIR, get_dataframe
 
 warnings.filterwarnings('ignore')
 
@@ -66,14 +66,16 @@ st.markdown("""
 def load_and_process_data():
     """Carrega e processa os dados"""
     try:
+        df = get_dataframe()
+
         # Simular dados para demo (substitua pelo seu path real)
-        df = pd.read_csv(DATABASE_DIR / 'Comun_Ocorrencias_final.csv', 
-                 on_bad_lines='skip',
-                 encoding='utf-8',      # Definir o encoding que tentará abrir o arquivo
-                 sep=',',               # Delimitador (padrão é vírgula)
-                 header=0,              # Primeira linha como cabeçalho
-                 #index_col=0            # Usar a primeira coluna como índice
-                 )    
+        # df = pd.read_csv(DATABASE_DIR / 'Comun_Ocorrencias_final.csv', 
+        #          on_bad_lines='skip',
+        #          encoding='utf-8',      # Definir o encoding que tentará abrir o arquivo
+        #          sep=',',               # Delimitador (padrão é vírgula)
+        #          header=0,              # Primeira linha como cabeçalho
+        #          #index_col=0            # Usar a primeira coluna como índice
+        #          )    
         
         df = df.drop('Relato da Ocorrência', axis=1)
         df = df.drop('Ações Imediatas', axis=1)

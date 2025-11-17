@@ -15,6 +15,8 @@ asttokens==3.0.0
 astunparse==1.6.3
 async-lru==2.0.5
 attrs==25.3.0
+azure-core==1.36.0
+azure-storage-blob==12.27.0
 babel==2.17.0
 backoff==2.2.1
 beautifulsoup4==4.13.5
@@ -196,6 +198,8 @@ pydantic_core==2.33.2
 pydantic-settings==2.10.1
 pydeck==0.9.1
 Pygments==2.19.2
+pymongo==4.15.3
+pymongoarrow==1.10.0
 pypandoc==1.15
 pyparsing==3.2.3
 pypdf==6.0.0
