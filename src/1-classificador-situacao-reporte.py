@@ -33,15 +33,15 @@ from tensorflow.keras.layers import Dense
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from tensorflow.keras.models import load_model
-from utils import DATABASE_DIR, MODEL_DIR
-
-df = pd.read_csv(DATABASE_DIR / 'Comun_Ocorrencias_final.csv', 
-                 on_bad_lines='skip',
-                 encoding='utf-8',      # Definir o encoding que tentará abrir o arquivo
-                 sep=',',               # Delimitador (padrão é vírgula)
-                 header=0,              # Primeira linha como cabeçalho
-                 #index_col=0            # Usar a primeira coluna como índice
-                 )       
+from utils import DATABASE_DIR, MODEL_DIR, get_dataframe
+df = get_dataframe()
+# df = pd.read_csv(DATABASE_DIR / 'Comun_Ocorrencias_final.csv', 
+#                  on_bad_lines='skip',
+#                  encoding='utf-8',      # Definir o encoding que tentará abrir o arquivo
+#                  sep=',',               # Delimitador (padrão é vírgula)
+#                  header=0,              # Primeira linha como cabeçalho
+#                  #index_col=0            # Usar a primeira coluna como índice
+#                  )       
 
 df = df.drop('Data', axis=1)
 df = df.drop('Relato da Ocorrência', axis=1)
